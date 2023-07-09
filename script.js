@@ -1,61 +1,69 @@
  var jsonData = {
-  "Question": "Are you interested in learning English?",
-  "Options": {
-    "Yes": {
-      "Question": "Let me tell you about my course. ",
-      "Options": {
-        "Next": {
-          "Question": "What is in this course?",
-          "Answer": "This course has pre-recorded videos and quizzes to reinforce your understanding of the topic",
-          "Options": {
-            "Next": {
-              "Question": "What is the duration of the course?",
-              "Answer": "Three months for 3 levels. Each level needs one month",
-              "Options": {
-                "Next": {
-                  "Question": "How long can I view the course content?",
-                  "Answer": "6 months",
+                  "Question": "ഇംഗ്ലീഷ് പഠിക്കാൻ നിങ്ങൾക്ക് താൽപ്പര്യമുണ്ടോ?",
                   "Options": {
-                    "Next": {
-                      "Question": "Is there any personal or group training?",
-                      "Answer": "No, but if you have any questions, I will personally answer them within 24 hours",
+                    "Yes": {
+                      "Question": "എന്റെ കോഴ്സിനെക്കുറിച്ച് ഞാൻ പറയാം.",
                       "Options": {
                         "Next": {
-                          "Question": "Are the classes available on WhatsApp?",
-                          "Answer": "No, they are on my course website",
+                          "Question": "ഈ കോഴ്സിൽ എന്താണ് ഉള്ളത്?",
+                          "Answer": "English basics, grammar , sentence making ഇതിനൊക്കെ വേണ്ടിയുള്ള  മുൻകൂട്ടി റെക്കോർഡുചെയ്ത വീഡിയോകളും ക്വിസുകളും ഉണ്ട്",
                           "Options": {
                             "Next": {
-                              "Question": "What are the course timings?",
-                              "Answer": "Since the course is available as pre-recorded videos, you can learn whenever you have time",
+                              "Question": "കോഴ്സിന്റെ കാലാവധി എത്രയാണ്?",
+                              "Answer": "3 ലെവലുകൾക്കായി മൂന്ന് മാസം. ഓരോ ലെവലിനും ഒരു മാസം ആവശ്യമാണ്",
                               "Options": {
                                 "Next": {
-                                  "Question": "How can I clear my doubts?",
-                                  "Answer": "You can either email me or comment on the course videos",
+                                  "Question": "കോഴ്സ്  എനിക്ക് എത്രകാലം കാണാൻ കഴിയും?",
+                                  "Answer": "6 months",
                                   "Options": {
                                     "Next": {
-                                      "Question": "What is the fee?",
-                                      "Answer": "Level 1: Rs.3,500/-, Level 2: Rs.4,500/-, Level 3: Rs.5,300/-",
+                                      "Question": "Personal or group training ഉണ്ടോ ?",
+                                      "Answer": "ഇല്ല, എന്നാൽ നിങ്ങൾക്ക് എന്തെങ്കിലും സംശയങ്ങളുണ്ടെങ്കിൽ, ഇമെയിൽ അയക്കുകയോ ,comment  ചെയ്യുകയോ ചെയ്താൽ മതി  ",
                                       "Options": {
                                         "Next": {
-                                          "Question": "Is there any offer?",
-                                          "Answer": "If you buy all three levels together, you can pay Rs.10,500/- instead of Rs.13,300/-",
+                                          "Question": "ക്ലാസുകൾ വാട്സാപ്പിൽ ലഭ്യമാണോ?",
+                                          "Answer": "ഇല്ല, എന്റെ course  website വഴിയാണ് ക്ലാസുകൾ ലഭിക്കുക ",
                                           "Options": {
                                             "Next": {
-                                              "Question": "Can I pay in monthly installments?",
-                                              "Answer": "Yes, if you buy the 3 level bundle, you can pay in two monthly installments of Rs.5,500/-",
+                                              "Question": "കോഴ്സ് സമയങ്ങൾ എന്തൊക്കെയാണ്?",
+                                              "Answer": "കോഴ്സ് മുൻകൂട്ടി റെക്കോർഡ് ചെയ്ത വീഡിയോകളായതിനാൽ, നിങ്ങൾക്ക് സമയം കിട്ടുമ്പോഴെല്ലാം പഠിക്കാം",
                                               "Options": {
                                                 "Next": {
-                                                  "Question": "How can I pay the fee?",
-                                                  "Answer": "At the moment, you can only use your card to make the payment. You can't use RuPay card. Before making the payment, make sure that international transactions are enabled on your card",
+                                                  "Question": "സംശയങ്ങൾ ഉണ്ടെങ്കിൽ എന്ത് ചെയ്യും?",
+                                                  "Answer": "നിങ്ങൾക്ക് ഒന്നുകിൽ എനിക്ക് ഇമെയിൽ ചെയ്യാം അല്ലെങ്കിൽ കോഴ്സ് വീഡിയോകളിൽ കമന്റ് ചെയ്യാം",
                                                   "Options": {
                                                     "Next": {
-                                                      "Question": "How do I enable international transactions?",
-                                                      "Answer": "You can search on YouTube or Google about how to do this for your bank.",
+                                                      "Question": "ഫീസ് എത്രയാണ്?",
+                                                      "Answer": "Level 1: Rs.3,500/-, Level 2: Rs.4,500/-, Level 3: Rs.5,300/-",
                                                       "Options": {
                                                         "Next": {
-                                                          "Question": "How can I know which level to join?",
-                                                          "Answer": "Please take this level test",
-                                                          "Options": "LEVEL TEST"
+                                                          "Question": "എന്തെങ്കിലും ഓഫർ ഉണ്ടോ?",
+                                                          "Answer": "മൂന്ന് ലെവലും ഒരുമിച്ച് വാങ്ങിയാൽ 13,300 രൂപയ്ക്ക് പകരം 10,500 രൂപക്കു കോഴ്സ് ലഭിക്കുന്നതാണ് ",
+                                                          "Options": {
+                                                            "Next": {
+                                                              "Question": "എനിക്ക് പ്രതിമാസ installments ആയി  അടയ്ക്കാനാകുമോ?",
+                                                              "Answer": "3 ലെവൽ ബണ്ടിൽ വാങ്ങുകയാണെങ്കിൽ, നിങ്ങൾക്ക് 5,500/- രൂപയുടെ രണ്ട് മാസ ഗഡുക്കളായി അടയ്ക്കാം.",
+                                                              "Options": {
+                                                                "Next": {
+                                                                  "Question": "ഫീസ് എങ്ങനെയാണ് അടക്കേണ്ടത് ?",
+                                                                  "Answer": "നിലവിൽ, പേയ്മെന്റ് നടത്താൻ മാത്രമേ നിങ്ങൾക്ക് കാർഡ് ഉപയോഗിക്കാൻ കഴിയൂ. നിങ്ങൾക്ക് RuPay കാർഡ് ഉപയോഗിക്കാൻ കഴിയില്ല. പണമടയ്ക്കുന്നതിന് മുമ്പ്, നിങ്ങളുടെ കാർഡിൽ അന്താരാഷ്ട്ര ഇടപാടുകൾ (international transactions ) പ്രവർത്തനക്ഷമമാക്കിയിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുക",
+                                                                  "Options": {
+                                                                    "Next": {
+                                                                      "Question": "അന്താരാഷ്ട്ര ഇടപാടുകൾ ( international transactions) എങ്ങനെയാണ് കാർഡിൽ റെഡി ആക്കുക ?",
+                                                                      "Answer": "നിങ്ങളുടെ ബാങ്കിനായി ഇത് എങ്ങനെ ചെയ്യാം എന്നതിനെക്കുറിച്ച് നിങ്ങൾക്ക് YouTube-ലോ Google-ലോ search ചെയ്യാം. ഇത് മനസ്സിലായില്ലെങ്കിൽ എനിക്ക് ഒരു ഇമെയിൽ അയക്കൂ. എന്റെ ഇമെയിൽ id : easyenglishwithvini@gmail.com ",
+                                                                      "Options": {
+                                                                        "Next": {
+                                                                          "Question": "ഏത് ലെവലിൽ ചേരണമെന്ന് എനിക്ക് എങ്ങനെ അറിയാനാകും?",
+                                                                          "Answer": "ദയവായി ഈ ലെവൽ ടെസ്റ്റ് ചെയ്തു നോക്കൂ ",
+                                                                          "Options": "LEVEL TEST"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
                                                         }
                                                       }
                                                     }
@@ -76,15 +84,7 @@
                       }
                     }
                   }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-};
+                };
 
 // Function to create a question div
 function createQuestionDiv(question) {
