@@ -165,6 +165,10 @@ var levels = {
       {
         "Question": "How do you say this in English? ഞാൻ എന്റെ കാർ നന്നാക്കിപ്പിച്ചു.",
         "Answers":["I got my car repaired", "I had my car repaired"]
+      },
+      {
+        "Question": "Choose the correct word (make, get, let, have)  I can’t ___ him to wake up early. എനിക്ക് അവനെ നേരത്തെ ഉണർത്താൻ കഴിയില്ല.",
+        "Answer":"get"
       }
     ]
 };
