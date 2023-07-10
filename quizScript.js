@@ -124,8 +124,8 @@ var levels = {
         "Answers": ["should have", "should've"]
       },
       {
-        "Question": "Choose the correct word: (for, to). I went to the shop __ some sugar",
-        "Answer": "for"
+        "Question": "Add appropriate Question Tags: She had found a pen,___",
+        "Answers": ["hadn't she?", "had she not"]
       },
       {
         "Question": "ഞാൻ എത്തിയപ്പോഴേക്കും അവർ പോയിരുന്നു. They _ when I arrived. (Use a form of leave)",
@@ -140,8 +140,8 @@ var levels = {
         "Answers": ["You could have gone", "You could've gone"]
       },
       {
-        "Question": " നമ്മൾ പോകണം. We ___ go. Choose the correct option (could, should, would",
-        "Answer":"should"
+        "Question": " If I ____ rich, I would buy a big house. Choose the correct option (was, were, am)",
+        "Answer":"were"
       },
       {
         "Question": "ഞാൻ ദിവസേന വ്യായാമം ചെയ്തിരുന്നു. Fill in the correct word(s) I ___ exercise regularly",
