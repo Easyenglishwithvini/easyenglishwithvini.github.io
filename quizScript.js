@@ -140,7 +140,7 @@ var levels = {
         "Answers": ["You could have gone", "You could've gone"]
       },
       {
-        "Question": " If I ____ rich, I would buy a big house. Choose the correct form of the verb 'to be',
+        "Question": " If I ____ rich, I would buy a big house. Choose the correct form of the verb 'to be'",
         "Answer":"were"
       },
       {
