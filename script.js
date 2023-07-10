@@ -54,8 +54,8 @@
                                                                       "Options": {
                                                                         "Next": {
                                                                           "Question": "ഏത് ലെവലിൽ ചേരണമെന്ന് എനിക്ക് എങ്ങനെ അറിയാനാകും?",
-                                                                          "Answer": "ദയവായി ഈ ലെവൽ ടെസ്റ്റ് ചെയ്തു നോക്കൂ ",
-                                                                          "Options": "LEVEL TEST"
+                                                                          "Answer": "ഈ ലെവൽ ടെസ്റ്റ് ചെയ്തു നോക്കൂ ",
+                                                                          "Options": ["Go to Level Test", "Level Test എടുക്കാതെ Course വാങ്ങു"]
                                                                         }
                                                                       }
                                                                     }
@@ -116,7 +116,7 @@ function createOptionButton(option, callback) {
 }
 
 // Function to update question and options
-function updateQuestionAndOptions(question, answer, options) {
+function updateQuestionAndOptions(question, answer, options, showSkipButton) {
   var questionContainer = document.getElementById('questionDiv');
   var optionButtonsContainer = document.getElementById('optionButtonsContainer');
 
@@ -126,18 +126,20 @@ function updateQuestionAndOptions(question, answer, options) {
   questionContainer.appendChild(createQuestionDiv(question));
   createAnswerDiv(questionContainer, answer);
 
-  var optionKeys = options === 'LEVEL TEST' ? ['Go to Level Test'] : Object.keys(options);
+  var optionKeys = options instanceof Array ? options : Object.keys(options);
   optionKeys.forEach(function(optionKey) {
-    var option = optionKey === 'Go to Level Test' ? optionKey : options[optionKey];
+    var option = optionKey.toLowerCase().indexOf('level test') === -1 ? options[optionKey] : optionKey;
     var button = createOptionButton(optionKey, function() {
       if (typeof option === 'string') {
-        if (option === optionKey) {
+        if (option === 'Go to Level Test') {
           // Handle LEVEL TEST case
           window.location.href = 'levelTest.html';
+        } else {
+          window.location.href = 'purchase.html';
         }
       } else {
         // Update question and options recursively
-        updateQuestionAndOptions(option.Question, option.Answer, option.Options);
+        updateQuestionAndOptions(option.Question, option.Answer, option.Options, true);
       }
     });
 
@@ -146,4 +148,4 @@ function updateQuestionAndOptions(question, answer, options) {
 }
 
 // Call the function with initial question and options
-updateQuestionAndOptions(jsonData.Question, jsonData.Answer, jsonData.Options);
+updateQuestionAndOptions(jsonData.Question, jsonData.Answer, jsonData.Options, false);
