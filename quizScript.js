@@ -1,11 +1,11 @@
 var levels = {
     level1: [
       {
-        "Question": "Fill in the correct word.Are they your friends? What do they __?",
+        "Question": "Use the correct form of the verb do-Are they your friends? What do they __?",
         "Answer": "do"
       },
       {
-        "Question": " Fill in the correct word. The news is __ the TV",
+        "Question": " Write the correct preposition. The news is __ the TV",
         "Answer": "on"
       },
       {
@@ -13,15 +13,15 @@ var levels = {
         "Answers": ["couldn't", "could not"]
       },
       {
-        "Question": "Fill in the correct word.Did she ____? (അവൾ പോയോ ?)",
+        "Question": "Use the correct form of the verb go- Did she ____? (അവൾ പോയോ ?)",
         "Answer": "go"
       },
       {
-        "Question": "Fill in the correct word. This is ____ (ഇത് എന്റേതാണ്)",
+        "Question": "Fill in the correct possessive pronoun. This is ____ (ഇത് എന്റേതാണ്)",
         "Answer": "mine"
       },
       {
-        "Question": "Fill in the correct word. These are ____ books (our, ours)",
+        "Question": "Choose the correct word. These are ____ books (our, ours)",
         "Answer": "our"
       },
       {
@@ -37,7 +37,7 @@ var levels = {
         "Answer":"dogs"
       },
       {
-        "Question": "Fill in the correct word. അവൻ വെള്ളിയാഴ്ച വീട്ടിൽ പോകാറുണ്ട്. He ___ home on Fridays",
+        "Question": "Use the correct form of the verb go- അവൻ വെള്ളിയാഴ്ച വീട്ടിൽ പോകാറുണ്ട്. He ___ home on Fridays",
         "Answer":"goes"
       },
       {
@@ -45,15 +45,15 @@ var levels = {
         "Answers":["doesn't", "does not"]
       },
       {
-        "Question": "Fill in the correct word. I saw the video ___ YouTube",
+        "Question": "Fill in the correct preposition. I saw the video ___ YouTube",
         "Answer":"on"
       },
       {
-        "Question": "Fill in the correct word(s). നീ അവിടെ ആറു മണിക്ക് കാണുമൊ? Will you be there __ 6pm",
+        "Question": "Fill in the correct preposition. നീ അവിടെ ആറു മണിക്ക് കാണുമൊ? Will you be there __ 6pm",
         "Answer":"at"
       },
       {
-        "Question": "Fill in the correct word. ഇന്നലെ അവൾ വൈകിപ്പോയി. She ____ late yesterday",
+        "Question": "Fill in the correct form of the verb 'to be'. ഇന്നലെ അവൾ വൈകിപ്പോയി. She ____ late yesterday",
         "Answer":"was"
       }
     ],
@@ -63,7 +63,7 @@ var levels = {
         "Answer": "any"
       },
       {
-        "Question": " Fill in the correct word. ഷെൽഫ് വൃത്തിയാക്കുന്നതിനിടയിൽ ഞാൻ ഗ്ലാസ് പൊട്ടിച്ചു. I broke the glass while __ (clean) the shelf",
+        "Question": " Use the correct form of the verb clean- ഷെൽഫ് വൃത്തിയാക്കുന്നതിനിടയിൽ ഞാൻ ഗ്ലാസ് പൊട്ടിച്ചു. I broke the glass while __  the shelf",
         "Answer": "cleaning"
       },
       {
@@ -83,14 +83,14 @@ var levels = {
         "Answer": "How did she go?"
       },
       {
-        "Question": " Fill in the correct form of -break. Have you ___ your glasses?",
+        "Question": " Fill in the correct form of the verb break- Have you ___ your glasses?",
         "Answer":"broken"
       },
       {
         "Question": "അവൻ എല്ലാ ദിവസവും ഓട്സ് കഴിക്കാറുണ്ട്. How do you say this in English?",
         "Answer":"He eats oats every day"},
       {
-        "Question": "Fill in the correct word. She has taken care of her ___ 2010",
+        "Question": "Choose the correct word (for, since). She has taken care of her ___ 2010",
         "Answer":"since"
       },
       {
@@ -106,11 +106,11 @@ var levels = {
         "Answer":"gone"
       },
       {
-        "Question": "Fill in the correct word. He is ___ best doctor in this hospital",
+        "Question": "Fill in the correct article. He is ___ best doctor in this hospital",
         "Answer":"the"
       },
       {
-        "Question": "Fill in the correct word. എനിക്ക് എന്റെ സഹോദരിയേക്കാൾ പ്രായമുണ്ട്. I am ____ than my sister",
+        "Question": "Fill in the correct form of the word old- എനിക്ക് എന്റെ സഹോദരിയേക്കാൾ പ്രായമുണ്ട്. I am ____ than my sister",
         "Answer":"older"
       }
     ],
@@ -140,7 +140,7 @@ var levels = {
         "Answers": ["You could have gone", "You could've gone"]
       },
       {
-        "Question": " If I ____ rich, I would buy a big house. Choose the correct option (was, were, am)",
+        "Question": " If I ____ rich, I would buy a big house. Choose the correct form of the verb 'to be',
         "Answer":"were"
       },
       {
@@ -159,7 +159,7 @@ var levels = {
         "Answers":["Ali said that he was tired", "Ali said he was tired"]
       },
       {
-        "Question": "Choose the correct word(s) (should be cooking, should be cooked, should be cook). This rice ___ for 40 to 50 minutes.",
+        "Question": "Choose the correct word(s) (should be cooking, should be cooked, should be cook).ഈ അരി 40-50 മിനിറ്റ് വേവിക്കണം  This rice ___ for 40 to 50 minutes.",
         "Answer":"should be cooked"
       },
       {
