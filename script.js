@@ -116,7 +116,7 @@ function createOptionButton(option, callback) {
 }
 
 // Function to update question and options
-function updateQuestionAndOptions(question, answer, options, showSkipButton) {
+function updateQuestionAndOptions(question, answer, options, showReviews) {
   var questionContainer = document.getElementById('questionDiv');
   var optionButtonsContainer = document.getElementById('optionButtonsContainer');
 
@@ -127,6 +127,9 @@ function updateQuestionAndOptions(question, answer, options, showSkipButton) {
   createAnswerDiv(questionContainer, answer);
 
   var optionKeys = options instanceof Array ? options : Object.keys(options);
+  if (!showReviews) {
+    document.getElementById('reviews').className += ' hidden';
+  }
   optionKeys.forEach(function(optionKey) {
     var option = optionKey.toLowerCase().indexOf('level test') === -1 ? options[optionKey] : optionKey;
     var button = createOptionButton(optionKey, function() {
@@ -139,7 +142,7 @@ function updateQuestionAndOptions(question, answer, options, showSkipButton) {
         }
       } else {
         // Update question and options recursively
-        updateQuestionAndOptions(option.Question, option.Answer, option.Options, true);
+        updateQuestionAndOptions(option.Question, option.Answer, option.Options, false);
       }
     });
 
@@ -148,4 +151,4 @@ function updateQuestionAndOptions(question, answer, options, showSkipButton) {
 }
 
 // Call the function with initial question and options
-updateQuestionAndOptions(jsonData.Question, jsonData.Answer, jsonData.Options, false);
+updateQuestionAndOptions(jsonData.Question, jsonData.Answer, jsonData.Options, true);

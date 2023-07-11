@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 60vw;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -95,4 +95,29 @@ body {
 
 .option-button .option-button-text:hover {
     color: black;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#logo {
+    display:flex;
+    align-items: center;
+}
+
+#logo img {
+    width: 128px;
+    height: 128px;
+}
+
+#logo p {
+    display:inline;
+    font-size: 3em;
+    font-family: fantasy;
+    font-style: italic;
+    line-height: 1.5em;
+    font-weight: 700;
+    color: wheat;
+    margin-left: 0.5em;
 }
