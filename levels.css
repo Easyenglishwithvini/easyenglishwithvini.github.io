@@ -88,6 +88,10 @@ body {
     background: linear-gradient(0deg, #FC2AC2 -43.11%, #FFB84E 153.97%) !important;
 }
 
+.pirple {
+    background: linear-gradient(0deg, #FC2AC2 -43.11%, #AA66AA 153.97%) !important;
+}
+
 .purple {
     background: linear-gradient(0deg, #cf03fc -43.11%, #5203fc 153.97%) !important;
 }
