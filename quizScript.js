@@ -185,7 +185,7 @@ var state = {
     }
 };
 var maxMistakesPerLevel = 3;
-var noCourseNeeded = "All you need is some practice. Just read English books, practice shadowing and utilize every opportunity to speak your heart out."
+var noCourseNeeded = "If you have not guess the answers, your basics are solid. All you need is some practice. If you want to practice speaking English with me, I offer live sessions over Google meet. Email me for details. My email id is easyenglishwithvini@gmail.com "
 
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
