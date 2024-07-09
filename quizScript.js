@@ -5,7 +5,7 @@ var levels = {
         "Answer": "do"
       },
       {
-        "Question": " Write the correct preposition. The news is __ the TV",
+        "Question": " Write the correct preposition. The news is __  TV",
         "Answer": "on"
       },
       {
@@ -185,7 +185,7 @@ var state = {
     }
 };
 var maxMistakesPerLevel = 3;
-var noCourseNeeded = "If you have not guess the answers, your basics are solid. All you need is some practice. If you want to practice speaking English with me, I offer live sessions over Google meet. Email me for details. My email id is easyenglishwithvini@gmail.com "
+var noCourseNeeded = "If you have not guessed the answers, your basics are solid. All you need is some practice. If you want to practice speaking English with me, I offer live sessions over Google meet. Email me for details. My email id is easyenglishwithvini@gmail.com "
 
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
@@ -262,14 +262,18 @@ function startLevel(level, callback) {
     updateQuestionAndOptions(levels[level][0].Question, levels[level][0].Answer || levels[level][0].Answers, level, callback);
 }
 
-startLevel('level1', function() {
-    startLevel('level2', function() {
-        startLevel('level3', function() {
-            var questionContainer = document.getElementById('questionDiv');
-            questionContainer.innerHTML = '';
-            questionContainer.appendChild(createQuestionDiv(noCourseNeeded));
-            document.getElementById('answer').classList.add('hidden');
-            document.getElementById('next').classList.add('hidden');
+document.getElementById('start-quiz').onclick = function () {
+    document.getElementById('quiz-message').classList.add('hidden');
+    document.getElementById('question-container').classList.remove('hidden');
+    startLevel('level1', function() {
+        startLevel('level2', function() {
+            startLevel('level3', function() {
+                var questionContainer = document.getElementById('questionDiv');
+                questionContainer.innerHTML = '';
+                questionContainer.appendChild(createQuestionDiv(noCourseNeeded));
+                document.getElementById('answer').classList.add('hidden');
+                document.getElementById('next').classList.add('hidden');
+            });
         });
     });
-});
+};

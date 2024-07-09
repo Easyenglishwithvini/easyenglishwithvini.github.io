@@ -7,7 +7,17 @@
 </head>
 <body>
 <div class="container">
-  <div class="question-container">
+  <div id="quiz-message">
+    <div class="message">Do you want to join Level 1, Level 2 or Level 3?
+      <br/>To know which level to start with, try the quiz.
+    <div class="button-container">
+      <a class="button" id="start-quiz">
+        <p class="button-text" id="start-text">Start quiz!</p>
+      </a>
+    </div>
+  </div>
+  </div>
+  <div id="question-container" class="question-container hidden">
     <div id="questionDiv"></div>
     <div class="input-container">
       <input id="answer" type="text" placeholder="Type your answer" />

@@ -14,7 +14,7 @@ body {
   align-items: center;
 }
 
-.question-container {
+.question-container, #quiz-message {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -31,7 +31,7 @@ body {
   display: flex;
 }
 
-.question-container .question {
+.question-container .question,#quiz-message .message {
   font-size: 2em;
   line-height: 1.5em;
   font-weight: 700;
@@ -42,7 +42,7 @@ body {
   margin-bottom: 20px;
 }
 
-.question-container .button {
+.question-container .button,#quiz-message .button {
     font-size: 1.4em;
     line-height: 1.5em;
     font-weight: 700;
@@ -98,5 +98,5 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
