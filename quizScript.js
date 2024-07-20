@@ -49,7 +49,7 @@ var levels = {
         "Answer":"on"
       },
       {
-        "Question": "Fill in the correct preposition. നീ അവിടെ ആറു മണിക്ക് കാണുമൊ? Will you be there __ 6pm",
+        "Question": "Fill in the correct preposition. നീ അവിടെ ആറു മണിക്ക് കാണുമൊ? Will you be there __ 6pm (in/on/at/for)",
         "Answer":"at"
       },
       {
@@ -76,7 +76,7 @@ var levels = {
       },
       {
         "Question": "How do you say this in English?  നിങ്ങൾ എപ്പോഴെങ്കിലും സിംഗപ്പൂരിൽ പോയിട്ടുണ്ടോ?",
-        "Answer": "Have you ever been to Singapore?"
+        "Answers": ["Have you ever been to Singapore?", "Have you been to Singapore?"]
       },
       {
         "Question": "അവൾ എങ്ങനെ പോയി? How to say this in English?",
@@ -88,7 +88,8 @@ var levels = {
       },
       {
         "Question": "അവൻ എല്ലാ ദിവസവും ഓട്സ് കഴിക്കാറുണ്ട്. How do you say this in English?",
-        "Answer":"He eats oats every day"},
+        "Answers":["He eats oats every day", "He eats oats daily"]
+      },
       {
         "Question": "Choose the correct word (for, since). She has taken care of her ___ 2010",
         "Answer":"since"
@@ -117,7 +118,7 @@ var levels = {
     level3: [
       {
         "Question": "Write the correct word (can't, could, can't, couldn't). എനിക്ക് ഉറങ്ങാനേ പറ്റിയില്ല. I ___  sleep at all",
-        "Answer": "couldn't"
+        "Answers": ["couldn't", "could not"]
       },
       {
         "Question": "അവൾക്കിപ്പോൾ പരീക്ഷ കഴിഞ്ഞിരിക്കണം. How to say this in English? Use a form of should. She _____ finished the exams by now",
@@ -152,7 +153,7 @@ var levels = {
       },
       {
         "Question": "ഞാൻ അധികം കഴിക്കാൻ പാടില്ലായിരുന്നു? Write the correct option (shouldn't, couldn't, shouldn't have, couldn't have) I ____ eaten too much",
-        "Answer": "shouldn't have"
+        "Answers": ["shouldn't have", "should not have"]
       },
       {
         "Question": "(Change to Reported Speech) Ali:\"I am tired\"",
@@ -225,22 +226,32 @@ function updateQuestionAndOptions(question, correctAnswer, level, callback) {
         if (correctAnswer instanceof Array) {
             if (correctAnswer.findIndex(a => answer === simplify(a)) !== -1) {
                 incrementScore(level);
+                displayResult('✅');
+            } else {
+                displayResult('❌');
             }
         } else if (answer === simplify(correctAnswer)) {
             incrementScore(level);
-        }
-        if (state.progress[level] < levels[level].length - 1) {
-            state.progress[level]++;
-            var nextQuestion = levels[level][state.progress[level]];
-            answerContainer.value = '';
-            updateQuestionAndOptions(nextQuestion.Question, nextQuestion.Answer || nextQuestion.Answers, level, callback);
+            displayResult('✅');
         } else {
-            if (hasFailedLevel(state.score[level])) {
-                window.location.href = `${level}.html`;
-            } else {
-                callback();
-            }
+            displayResult('❌');
         }
+        setTimeout(function () {
+            if (state.progress[level] < levels[level].length - 1) {
+                state.progress[level]++;
+                var nextQuestion = levels[level][state.progress[level]];
+                answerContainer.value = '';
+                clearResult();
+                updateQuestionAndOptions(nextQuestion.Question, nextQuestion.Answer || nextQuestion.Answers, level, callback);
+            } else {
+                if (hasFailedLevel(state.score[level])) {
+                    window.location.href = `${level}.html`;
+                } else {
+                    clearResult();
+                    callback();
+                }
+            }
+        }, 2000);
     };
 }
 
@@ -250,6 +261,14 @@ function simplify(str) {
 
 function incrementScore(level) {
     state.score[level][state.progress[level]] = 1;
+}
+
+function displayResult(result) {
+    document.getElementById('result').innerHTML = result;
+}
+
+function clearResult() {
+    document.getElementById('result').innerHTML = '';
 }
 
 function hasFailedLevel(level) {
@@ -262,18 +281,36 @@ function startLevel(level, callback) {
     updateQuestionAndOptions(levels[level][0].Question, levels[level][0].Answer || levels[level][0].Answers, level, callback);
 }
 
-document.getElementById('start-quiz').onclick = function () {
-    document.getElementById('quiz-message').classList.add('hidden');
-    document.getElementById('question-container').classList.remove('hidden');
-    startLevel('level1', function() {
-        startLevel('level2', function() {
-            startLevel('level3', function() {
-                var questionContainer = document.getElementById('questionDiv');
-                questionContainer.innerHTML = '';
-                questionContainer.appendChild(createQuestionDiv(noCourseNeeded));
-                document.getElementById('answer').classList.add('hidden');
-                document.getElementById('next').classList.add('hidden');
+var keyDownListener = function(event) {
+    if (document.activeElement.id !== 'answer') {
+        document.getElementById('answer').focus();
+    }
+    if (event.keyCode == 13) {
+        if (!document.getElementById('intro').classList.contains('hidden')) {
+            document.getElementById('start-quiz').click();
+        }
+        if (document.getElementById('answer').value !== '') {
+            document.getElementById('next').click();
+        }
+    }
+};
+document.addEventListener('keydown', keyDownListener);
+
+document.getElementById('start-quiz').addEventListener('click', function(){
+    if (!document.getElementById('intro').classList.contains('hidden')) {
+        document.getElementById('quiz-container').classList.remove('hidden');
+        startLevel('level1', function() {
+            startLevel('level2', function() {
+                startLevel('level3', function() {
+                    var questionContainer = document.getElementById('questionDiv');
+                    questionContainer.innerHTML = '';
+                    questionContainer.appendChild(createQuestionDiv(noCourseNeeded));
+                    document.removeEventListener('keydown', keyDownListener);
+                    document.getElementById('answer').classList.add('hidden');
+                    document.getElementById('next').classList.add('hidden');
+                });
             });
         });
-    });
-};
+        document.getElementById('intro').classList.add('hidden');
+    }
+});

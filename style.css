@@ -1,124 +1,382 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #221d6a;
+body, body > * {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, sans-serif;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: geometricprecision;
+    }
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    place-items: center;
 }
 
-.container {
-  max-width: 60vw;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.header div {
+    grid-area: 1 / 1 / 1 / 2;
 }
 
-.question-container {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 1.6em;
-  padding: 1.6em 2.4em;
-  justify-content: space-between;
-  flex: 0 0 39%;
-  margin: 1.2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.question-container h1 {
-  margin-top: 0;
-  font-size: 24px;
-  color: #233e8b;
-}
-
-.question-container .question {
-  font-size: 2em;
-  line-height: 1.5em;
-  font-weight: 700;
-  color: white !important;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.question-container .answer {
-  font-size: 2em;
-  line-height: 1.5em;
-  font-weight: 700;
-  color: white !important;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.question-container .option-button {
-    font-size: 1.4em;
-    line-height: 1.5em;
-    font-weight: 700;
-    color: white !important;
-    margin: 0;
-    text-align: center;
-    letter-spacing: 0.2px;
-    flex: 0 0 100%;
-    max-width: 100%;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 1.45em;
-
-    margin-top: 0.8em;
+.header-item {
+    padding: 15px;
     cursor: pointer;
+    color: #555;
+    text-decoration: none;
 }
 
-#optionButtonsContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+.header-item:hover {
+    color: #000;
 }
 
-.option-button p {
+#impressum {
+    grid-area: 1 / -4 / 1 / -3;
+}
+
+#blog {
+    grid-area: 1 / -3 / 1 / -2;
+}
+
+#about {
+    grid-area: 1 / -2 / 1 / -1;
+}
+
+.banner {
+    display: block;
+}
+
+.banner-image {
+    background-image: url("vini.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
+    width: 100%;
+    height: 300px;
+    box-shadow: inset 0px 0px 5px 5px #fff;
+}
+
+.banner-main-text {
+    float: left;
+    font-size: 5vmax;
+    text-align: center;
+    width: 100%;
+    margin: 1em 0 0.5em 0;
+    color: #fff;
+}
+
+.banner-secondary-text {
+    float: left;
+    font-size: 3vmax;
+    font-family: Inter;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 4em;
+    color: #fff;
+}
+
+@media (min-width: 40em) {
+    .banner {
+        display: grid;
+        grid-template-columns: repeat(15, 1fr);
+        grid-template-rows: repeat(12, 50px);
+        margin-bottom: 8em;
+    }
+
+    .banner-image {
+        grid-area: 1 / 1 / -1 / 7;
+        background-position: -20vmin top !important;
+        width: unset;
+        height: unset;
+    }
+
+    .banner-main-text {
+        grid-area: 2 / 8 / 7 / 15;
+        font-size: 8vmax;
+        line-height: 8vmax;
+        place-self: center;
+        text-align: center;
+        color: #000;
+    }
+
+    .banner-secondary-text {
+        grid-area: 6 / 8 / -3 / 15;
+        font-size: 3vmax;
+        place-self: center;
+        text-align: center;
+        margin-bottom: 0 !important;
+        color: #000;
+    }
+}
+
+@media (min-width: 50em) {
+    .banner-image {
+        background-position: -10vmin top !important;
+        width: unset;
+        height: unset;
+    }
+}
+
+@media (min-width: 55em) {
+    .reviews {
+        column-count: 2 !important;
+        min-width: 20em;
+    }
+
+    .course {
+        flex: 0 0 calc(50% - 6em);
+        max-width: calc(50% - 6em);
+    }
+}
+
+@media (min-width: 62em) {
+    .banner-image {
+        background-position: left top !important;
+        width: unset;
+        height: unset;
+    }
+
+    .banner-main-text {
+        font-size: 7vmax;
+        line-height: 6vmax;
+        grid-area: 2 / 8 / 8 / 15;
+    }
+
+    .banner-secondary-text {
+        font-size: 3vmax;
+        grid-area: 6 / 8 / -1 / 15;
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (min-width: 81em) {
+    .banner-main-text {
+        font-size: 6.5vmax;
+        line-height: 6vmax;
+    }
+
+    .banner-secondary-text {
+        font-size: 3vmax;
+    }
+}
+
+.beige {
+    background-color: blanchedalmond;
+}
+
+.reviews-box {
+    margin: 0 0 5em 0;
+    padding: 2em;
+    background-color: #466a8b;
+}
+
+.courses-box {
+    margin: 0 0 5em 0;
+    padding: 0 2em 0 2em;
+}
+
+.reviews-header {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0 0 3em 0;
+    color: #fff;
+}
+
+.courses-header {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.levels-message p {
+    background-color: #466a8b;
+    color: #fff;
+    width: calc(100% - 4em);
+    text-align: center;
+    font-size: 1.5em;
     margin: 0;
-    padding: 0.68em 0;
+    padding: 2em;
 }
 
-.option-button:hover {
-    background: rgba(255, 255, 255);
+.reviews-header p, .courses-header p, .quiz-header p {
+    font-size: 1.8em;
+    line-height: 1em !important;
+    font-weight: 500;
 }
 
-.option-button .option-button-text:hover {
-    color: black;
+.reviews {
+    column-count: 1;
+    column-gap: 2rem;
+    width: 100%;
+    margin: auto;
 }
 
-.hidden {
-    display: none !important;
+.review {
+    border-radius: 1em;
+    background-color: #f9fafb;
+    padding: 2em;
+    margin-bottom: 2rem;
+    display: inline-block;
 }
 
-#logo {
-    display:flex;
+.review .rating {
+    background-image: url('star.svg');
+    width: 100px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.review .review-text {
+    margin-bottom: 20px;
+    font-weight: 550;
+    font-size: 1.25em;
+    letter-spacing: normal;
+    line-height: 1.5;
+}
+
+.review .student {
+    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-#logo img {
-    width: 128px;
-    height: 128px;
+.review .student img, .review .student .initial {
+    height: 3em;
+    width: 3em;
+    min-height: 3em;
+    min-width: 3em;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-right: 10px;
 }
 
-#logo p {
-    display:inline;
-    font-size: 3em;
-    font-family: fantasy;
-    font-style: italic;
-    line-height: 1.5em;
+.review .student .initial {
+    border: 2px solid #ff924d;
+    text-align: center;
+    line-height: 3em;
     font-weight: 700;
-    color: wheat;
-    margin-left: 0.5em;
+    background-color: #466a8b;
+    color: #fff;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.course {
+    width: 100%;
+    text-align: center;
+    box-shadow: -10px 10px 20px rgba(0,0,0,.15);
+    margin: 2em 1em 0 1em;
+    border-radius: 1.25em;
+    padding: 2em;
+    transition: all .4s linear;
+}
+
+.course:hover {
+    box-shadow: -10px 10px 20px rgba(0,0,0,0.3);
+    padding: 1.95em 1.95em 2.05em 2.05em;
+    background-color: #466a8b;
+    color: #fff;
+}
+
+.course p {
+    font-size: 1.2em;
+}
+
+.course p:last-of-type {
+    margin-bottom: 2em;
+}
+
+.button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    background-color: #466a8b;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    max-width: max-content;
+    padding: 0.5em 1.5em;
+    border-radius: 10px;
+}
+
+.course:hover .button, .button:hover {
+    background-color: #fff;
+    color: #466a8b;
+}
+
+.button-inverse-color {
+    color: #466a8b;
+    background-color: #fff;
+}
+
+.button-inverse-color:hover {
+    color: #5983ab;
+    background-color: #fff;
+    padding: 0.49em 1.49em 0.51em 1.51em;
+    box-shadow: -10px 10px 40px rgba(0,0,0,0.3);
+}
+
+.quiz-box {
+    background-color: #466a8b;
+    color: #fff;
+    width: 100%;
+}
+
+.quiz-header {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 1em 0 2em 0;
+}
+
+.quiz-header > span {
+    display: block;
+}
+
+.quiz-header .button {
+    margin: 1em 0 0 0;
+    font-size: 1em;
+}
+
+.mirror {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    display: inline-block;
+}
+
+.imprint {
+    font-size: 1.5em;
+    margin: 1em 0 0 2em;
+}
+
+.imprint div p {
+    margin: 0;
+}
+
+.vini {
+    background-image: url("vini.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
+    width: 20em;
+    height: 20em;
+    border-radius: 100%;
+    margin-left: 2em;
+}
+
+@media (min-width: 50em) {
+    .imprint-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
 }

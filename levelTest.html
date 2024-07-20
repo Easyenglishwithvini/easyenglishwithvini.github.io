@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Landing Page</title>
+  <title>Level test</title>
   <link rel="stylesheet" type="text/css" href="quizStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
 </head>
 <body>
-<div class="container">
-  <div id="quiz-message">
-    <div class="message">Do you want to join Level 1, Level 2 or Level 3?
-      <br/>To know which level to start with, try the quiz.
+<div id="intro">
+  <div class="info-container">
+    <div>
+      <div class="info-header">
+        Which is the right course for your current English level?
+      </div>
+    </div>
+    <div class="info-body">
+      <div class="info">Find the best course for your current English level with this short test.</div>
+      <div class="info note">NOTE: I don't save the test results. Only you can see your results.</div>
+    </div>
     <div class="button-container">
-      <a class="button" id="start-quiz">
-        <p class="button-text" id="start-text">Start quiz!</p>
+      <a id="start-quiz" class="button">
+        <p class="button-text">Start quiz</p>
       </a>
+      <div class="enter-hint"><strong>OR</strong> press<strong> Enter ↵</strong></div>
+    </div>
+    <div class="time-needed">
+      <span>
+        <svg width="16" height="16" viewBox="0 0 12 12" fill="none">
+            <circle cx="6" cy="6" fill="#355069" r="6"></circle>
+            <line x1="6" y1="6" x2="6" y2="3" stroke="#e0e8f0" stroke-width="1.2" stroke-linecap="round"></line>
+            <line x1="6" y1="6" x2="6" y2="3" stroke="#e0e8f0" stroke-width="1.2" stroke-linecap="round"
+                  id="clock-hour-hand"></line>
+        </svg>
+      </span>
+      Takes 3 minutes
     </div>
   </div>
-  </div>
-  <div id="question-container" class="question-container hidden">
+  <div class="intro-image"></div>
+</div>
+<div id="quiz-container" class="container hidden">
+  <div class="question-container">
     <div id="questionDiv"></div>
     <div class="input-container">
-      <input id="answer" type="text" placeholder="Type your answer" />
+      <input id="answer" type="text" placeholder="Type your answer here" />
+      <span id="result"></span>
     </div>
     <div class="button-container">
       <a class="button" id="next">
         <p class="button-text" id="next-text">Next</p>
       </a>
+      <div class="enter-hint"><strong>OR</strong> press<strong> Enter ↵</strong></div>
     </div>
   </div>
 </div>
