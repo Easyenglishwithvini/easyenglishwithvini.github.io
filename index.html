@@ -202,6 +202,7 @@
             </div>
         </div>
     </div>
+    <div class="button button-inverse-color" id="toggle-reviews">Show more</div>
 </div>
 <div class="courses-box">
     <div class="courses-header">
@@ -268,5 +269,20 @@
     </div>
     <span>© 2024 Vini's Academy All Rights Reserved</span>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('toggle-reviews');
+        const coursesContainer = document.querySelector('.reviews');
+
+        toggleButton.addEventListener('click', function() {
+            coursesContainer.classList.toggle('expanded');
+            if (coursesContainer.classList.contains('expanded')) {
+                toggleButton.textContent = 'Show less';
+            } else {
+                toggleButton.textContent = 'Show more';
+            }
+        });
+    });
+</script>
 </body>
 </html>

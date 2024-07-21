@@ -272,6 +272,20 @@ body, body > * {
     transition: all .4s linear;
 }
 
+.reviews.expanded .review {
+    display: inline-block !important;
+}
+
+.review:nth-child(n + 3) {
+    display: none;
+}
+
+#toggle-reviews {
+    width: 20vw;
+    margin: 6vmax 62.5% 6vmax 37.5%;
+    cursor: pointer;
+}
+
 .course:hover {
     box-shadow: -10px 10px 20px rgba(0,0,0,0.3);
     padding: 1.95em 1.95em 2.05em 2.05em;
