@@ -256,7 +256,7 @@ function updateQuestionAndOptions(question, correctAnswer, level, callback) {
 }
 
 function simplify(str) {
-    return str.trim().replace(/\s+/g, ' ').replace(/[.?]/g, '').toLowerCase();
+    return str.trim().replace(/\s+/g, ' ').replace(/[.?]/g, '').replace(/["'"]/g, ).toLowerCase();
 }
 
 function incrementScore(level) {
