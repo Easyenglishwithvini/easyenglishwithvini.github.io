@@ -183,7 +183,8 @@ var state = {
         level1: new Array(levels.level1.length).fill(0),
         level2: new Array(levels.level2.length).fill(0),
         level3: new Array(levels.level3.length).fill(0)
-    }
+    },
+    transition: false
 };
 var maxMistakesPerLevel = 3;
 var noCourseNeeded = "If you have not guessed the answers, your basics are solid. All you need is some practice. If you want to practice speaking English with me, I offer live sessions over Google meet. Email me for details. My email id is easyenglishwithvini@gmail.com "
@@ -221,6 +222,9 @@ function updateQuestionAndOptions(question, correctAnswer, level, callback) {
     questionContainer.appendChild(createQuestionDiv(question));
 
     document.getElementById('next').onclick = function() {
+        if (state.transition) {
+            return;
+        }
         var answerContainer = document.getElementById('answer');
         var answer = simplify(answerContainer.value);
         if (correctAnswer instanceof Array) {
@@ -236,7 +240,9 @@ function updateQuestionAndOptions(question, correctAnswer, level, callback) {
         } else {
             displayResult('❌');
         }
+        state.transition = true;
         setTimeout(function () {
+            state.transition = false;
             if (state.progress[level] < levels[level].length - 1) {
                 state.progress[level]++;
                 var nextQuestion = levels[level][state.progress[level]];
