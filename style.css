@@ -394,3 +394,9 @@ body, body > * {
         align-items: center;
     }
 }
+
+.copyright {
+    text-align: center;
+    font-size: 2vmax;
+    line-height: 10vmax;
+}
