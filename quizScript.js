@@ -251,7 +251,7 @@ function updateQuestionAndOptions(question, correctAnswer, level, callback) {
                     callback();
                 }
             }
-        }, 2000);
+        }, 1000);
     };
 }
 
