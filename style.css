@@ -397,6 +397,5 @@ body, body > * {
 
 .copyright {
     text-align: center;
-    font-size: 2vmax;
-    line-height: 10vmax;
+    line-height: 6vmax;
 }

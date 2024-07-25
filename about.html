@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Easy English with Vini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body > * {
+            margin: 0;
+            padding: 0;
+            font-family: Epilogue, sans-serif;
+            -webkit-font-smoothing: subpixel-antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: geometricprecision;
+        }
+        .header {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            place-items: center;
+            padding: 2em;
+        }
+        .header div {
+            grid-area: 1 / 1 / 1 / 2;
+        }
+        .header-item {
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .header-item:hover {
+            color: #000;
+        }
+        #home {
+            grid-area: 1 / -4 / 1 / -3;
+        }
+        #impressum {
+            grid-area: 1 / -3 / 1 / -2;
+        }
+        #blog {
+            grid-area: 1 / -2 / 1 / -1;
+        }
+        .family-section, .contact-section {
+            background-color: #466a8b;
+            font-size: 2vmax;
+            letter-spacing: 0.1vmax;
+            line-height: 3vmax;
+            color: #fff;
+        }
+        .family-section img, .past-section img, .contact-section img {
+            width: 50vmax;
+        }
+        .past-section {
+            font-size: 1.5vmax;
+            letter-spacing: 0.1vmax;
+            line-height: 2.5vmax;
+            color: #000;
+        }
+        .family-section div, .past-section div, .contact-section div {
+            padding: 2em;
+        }
+        @media (min-width: 62em) {
+            .family-section, .past-section, .contact-section {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        .contact-me {
+            font-size: 3vmax;
+            text-align: center;
+        }
+        a {
+            font-style: italic;
+            color: #fff;
+        }
+        footer {
+            padding: 2em;
+        }
+        footer p {
+            text-align: center;
+        }
+        .header a {
+            font-style: unset;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div id="home"><a href="index.html" target="_blank" rel="noopener noreferrer"  class="header-item">Home</a></div>
+    <div id="impressum"><a href="imprint.html" target="_blank" rel="noopener noreferrer"  class="header-item">Impressum</a></div>
+    <div id="blog"><a target="_blank" rel="noopener noreferrer"  class="header-item">Blog</a></div>
+</div>
+
+<div class="family-section">
+    <img src="family.png">
+    <div>
+        <p>Family𖠳</p>
+        <p>I live with my husband Anup and our 3 year old son in Berlin, Germany 𖠌
+        I don't have any pets but my house sometimes turns into a forest with my house plants.𖤣.𖥧.𖡼.⚘ I occassionally create videos about my life on my 2nd channel <a href="https://www.youtube.com/@Ithirikaryam">INeOKa</a>
+        </p>
+    </div>
+</div>
+<div class="past-section">
+    <div>
+        <p>
+            What I did in the past 𖦵</p>
+        <p>
+            After graduating as a Computer Science Engineer, I found work as an Assistant Manager in a Bank.𐦆  After working in 4 different branches, I decided to persue higher studies at International Institute of Information Technology, Hyderabad.
+            I completed my MS by Research in Computer Science under Prof. Jawahar. The results of my work were published in two International conferences (cite). 𐦉 Meanwhile I got an internship opportunity at Wikipedia.
+            After moving to Berlin, I worked as a Machine Learning Engineer, developing a Recommender System using Deep Learning.
+            And now here I am, creating content and exploring life.𐦖
+        </p>
+    </div>
+    <img src="viniabout.jpg">
+</div>
+<div class="contact-section">
+    <img src="contact.png">
+    <div>
+        <p class="contact-me">
+            Contact me ✎</p>
+        <p>✉  easyenglishwithvini@gmail.com</p>
+        <p>✆  +49 152 05791040</p>
+        <p>YouTube: <a href="https://www.youtube.com/c/EasyEnglishwithVini">@EasyEnglishwithVini</a></p>
+        <p>Instagram:  <a href="https://www.instagram.com/vinithavenus">@vinithavenus</a></p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 Vini's Academy All Rights Reserved</p>
+</footer>
+</body>
+</html>
