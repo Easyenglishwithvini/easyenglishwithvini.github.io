@@ -399,3 +399,8 @@ body, body > * {
     text-align: center;
     line-height: 6vmax;
 }
+
+.imprint-info {
+    font-size: 0.8em;
+    font-style: italic;
+}
