@@ -187,7 +187,7 @@ var state = {
     transition: false
 };
 var maxMistakesPerLevel = 3;
-var noCourseNeeded = "If you have not guessed the answers, your basics are solid. All you need is some practice. If you want to practice speaking English with me, I offer live sessions over Google meet. Email me for details. My email id is easyenglishwithvini@gmail.com "
+var noCourseNeeded = "If you have not guessed the answers, your basics are solid. All you need is some practice.I offer story based Speaking classes through through WhatsApp. They are not one to one classes. If interested contact +91 8157811691  "
 
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
