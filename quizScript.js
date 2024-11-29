@@ -189,24 +189,6 @@ var state = {
 var maxMistakesPerLevel = 3;
 var noCourseNeeded = "If you have not guessed the answers, your basics are solid. All you need is some practice.I offer story based Speaking classes through through WhatsApp. They are not one to one classes. If interested contact +91 8157811691  "
 
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
-
 // Function to create a question div
 function createQuestionDiv(question) {
   var questionDiv = document.createElement('div');
@@ -251,7 +233,11 @@ function updateQuestionAndOptions(question, correctAnswer, level, callback) {
                 updateQuestionAndOptions(nextQuestion.Question, nextQuestion.Answer || nextQuestion.Answers, level, callback);
             } else {
                 if (hasFailedLevel(state.score[level])) {
-                    window.location.href = `${level}.html`;
+                    var scoreString = parseInt(Object.values(state.score)
+                                        .reduce((a, b) => a.concat(b))
+                                        .reduce((a,b) => a + b, ''), 2).toString(16);
+                    window.localStorage.setItem('levelTestScore', scoreString);
+                    var levelPage = window.open(`${level}.html`, '_self');
                 } else {
                     clearResult();
                     callback();
@@ -282,7 +268,6 @@ function hasFailedLevel(level) {
 }
 
 function startLevel(level, callback) {
-    shuffle(levels[level]);
     document.getElementById('answer').value = '';
     updateQuestionAndOptions(levels[level][0].Question, levels[level][0].Answer || levels[level][0].Answers, level, callback);
 }

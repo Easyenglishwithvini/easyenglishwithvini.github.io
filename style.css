@@ -408,3 +408,18 @@ body, body > * {
     font-size: 0.8em;
     font-style: italic;
 }
+
+#qrcode {
+    width: 20vmax;
+    height: 20vmax;
+    margin: 2em auto;
+}
+
+#qrcode img {
+    width: 20vmax;
+    height: 20vmax;
+}
+
+.hidden {
+    display: none !important;
+}
